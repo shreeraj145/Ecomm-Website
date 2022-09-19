@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+const dbUrl = process.env.MONGO_URI;
 
 const connectDB = async () => {
-  const conn = mongoose
+  mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
       console.log("DATABASE CONNECTED");
@@ -11,6 +15,5 @@ const connectDB = async () => {
       console.log(err);
     });
 };
-
 
 export default connectDB;
