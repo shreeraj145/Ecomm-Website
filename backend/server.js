@@ -22,8 +22,7 @@ app.use(notFound);
 
 app.use(errorHandler);
 
-
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const environment = process.env.NODE_ENV;
 
 app.listen(

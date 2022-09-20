@@ -14,7 +14,7 @@ const Product = () => {
       setProduct(data);
     };
     fetchProduct();
-  }, []);
+  });
 
   return (
     <>
@@ -23,7 +23,7 @@ const Product = () => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={product.image} alt={product.name} fluid></Image>
+          <Image src={product.image} alt={product.name} fluid className="border"></Image>
         </Col>
         <Col md={3}>
           <ListGroup variant="flush">
