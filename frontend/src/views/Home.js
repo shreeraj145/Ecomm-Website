@@ -13,12 +13,11 @@ const Home = () => {
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
-
   return (
     <>
       <h1>Latest Gadgets</h1>
       {error ? (
-        <Message variant="success">{error}</Message>
+        <Message variant="danger">{error}</Message>
       ) : loading ? (
         <Loader />
       ) : (
