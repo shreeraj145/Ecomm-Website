@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Alert } from "react-bootstrap";
 import Product from "../components/Product.js";
 import Loader from "../components/Loader.js";
 import Message from "../components/Message.js";
@@ -16,10 +16,12 @@ const Home = () => {
   return (
     <>
       <h1>Latest Gadgets</h1>
-      {error ? (
-        <Message variant="danger">{error}</Message>
-      ) : loading ? (
+      {loading ? (
         <Loader />
+      ) : error ? (
+        <div>
+          <Alert variant="danger">{error}</Alert>
+        </div>
       ) : (
         <Row>
           {products.map((product) => (
