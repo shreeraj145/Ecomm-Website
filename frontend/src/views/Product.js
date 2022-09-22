@@ -16,19 +16,19 @@ import Loader from "../components/Loader";
 import { listProductsDetails } from "../actions/productActions";
 
 const Product = () => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const { id } = useParams();
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  const navigate = useNavigate();
+  const history = useNavigate();
 
   useEffect(() => {
     dispatch(listProductsDetails(id));
-  },[dispatch]);
+  }, [dispatch]);
 
   const addToCartHandler = () => {
-    navigate(`/cart/${id}?qty=${qty}`);
+    history(`/cart/${id}?qty=${qty}`);
   };
   return (
     <>
