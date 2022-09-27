@@ -35,23 +35,23 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {cartItems.length === 0 ? (
-                <LinkContainer to="/cart">
+                <LinkContainer to="/cart" id="cartContainer">
                   <Nav.Link className="fa-solid fa-cart-shopping d-flex align-self-baseline">
                     Cart
                   </Nav.Link>
                 </LinkContainer>
               ) : (
-                <LinkContainer to="/cart" id="cart">
-                  <Nav.Link className="fa-solid fa-cart-shopping">
+                <LinkContainer to="/cart" id="cartContainerBadge">
+                  <Nav.Link className="fa-solid fa-cart-shopping" id="cart">
                     Cart
-                    <Badge pill bg="secondary" id="badge">
+                    <Badge id="badge" bg="secondary">
                       {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                     </Badge>
                   </Nav.Link>
                 </LinkContainer>
               )}
               {userInfo ? (
-                <NavDropdown title={userInfo.name} id="username">
+                <NavDropdown title={userInfo.name.split(" ")[0]} id="username">
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
