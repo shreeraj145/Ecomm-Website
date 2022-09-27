@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./views/Home.js";
 import Product from "./views/Product.js";
 import Cart from "./views/Cart.js";
+import Login from "./views/Login.js";
+import Register from "./views/Register.js";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/product/:id" element={<Product />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart />}>
               <Route path=":id" element={<Cart />} />
             </Route>

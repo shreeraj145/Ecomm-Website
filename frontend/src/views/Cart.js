@@ -43,7 +43,10 @@ const Cart = () => {
         <h1>Shopping cart</h1>
         {cartItems.length === 0 ? (
           <Alert variant="info">
-            Your cart is empty <Link to="/">Go back</Link>{" "}
+            Your cart is empty{" "}
+            <Link to="/" className="u">
+              Go back
+            </Link>{" "}
           </Alert>
         ) : (
           <ListGroup variant="flush">

@@ -38,3 +38,20 @@ h2 {
   font-size: 1.4rem;
   padding: 0.5rem 0;
 }
+
+
+
+
+#badge {
+  max-height: 1.3rem;
+  border-radius: 50%;
+  top: auto;
+  background-color: rgb(8, 8, 181);
+}
+
+#username {
+  display: flex;
+  align-items:baseline ;
+  font-weight: 1.5rem;
+  font-size: medium;
+}

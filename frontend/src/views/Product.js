@@ -9,6 +9,7 @@ import {
   Card,
   Button,
   Form,
+  Alert,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
 import Message from "../components/Message";
@@ -27,8 +28,9 @@ const Product = () => {
     dispatch(listProductsDetails(id));
   }, [dispatch]);
 
-  const addToCartHandler = () => {
-    history(`/cart/${id}?qty=${qty}`);
+  const addToCartHandler = async () => {
+    await history(`/cart/${id}?qty=${qty}`);
+    history(`/product/${id}`);
   };
   return (
     <>
