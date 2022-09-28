@@ -5,13 +5,11 @@ import {
   Container,
   Navbar,
   Nav,
-  Span,
   NavDropdown,
-  Badge,
-  Button,
+  Badge
 } from "react-bootstrap";
 import { logout } from "../actions/userActions";
-import { Link } from "react-router-dom";
+
 
 const Header = () => {
   const dispatch = useDispatch();

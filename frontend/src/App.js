@@ -8,6 +8,8 @@ import Product from "./views/Product.js";
 import Cart from "./views/Cart.js";
 import Login from "./views/Login.js";
 import Register from "./views/Register.js";
+import Profile from "./views/Profile";
+import UpdateProfile from "./views/UpdateProfile";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
             <Route path="/product/:id" element={<Product />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit" element={<UpdateProfile />} />
             <Route path="/cart" element={<Cart />}>
               <Route path=":id" element={<Cart />} />
             </Route>

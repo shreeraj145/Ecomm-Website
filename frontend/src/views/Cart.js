@@ -44,8 +44,8 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <Alert variant="info">
             Your cart is empty{" "}
-            <Link to="/" className="u">
-              Go back
+            <Link to="/" className="u d1">
+              <strong>Go to products page</strong>
             </Link>{" "}
           </Alert>
         ) : (
