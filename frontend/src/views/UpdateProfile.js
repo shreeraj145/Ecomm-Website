@@ -45,6 +45,7 @@ const UpdateProfile = () => {
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
       navigate("/profile");
+      dispatch(getUserDetails("profile"));
     }
   };
 

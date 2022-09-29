@@ -1,15 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
-import {
-  Container,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Badge
-} from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown, Badge } from "react-bootstrap";
 import { logout } from "../actions/userActions";
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -33,20 +27,25 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {cartItems.length === 0 ? (
-                <LinkContainer to="/cart" id="cartContainer">
-                  <Nav.Link className="fa-solid fa-cart-shopping d-flex align-self-baseline">
+                <Nav.Link to="/cart" id="cartContainer">
+                  {/* <Nav.Link className="fa-solid fa-cart-shopping d-flex align-self-baseline">
                     Cart
-                  </Nav.Link>
-                </LinkContainer>
+                  </Nav.Link> */}
+                  Cart
+                </Nav.Link>
               ) : (
-                <LinkContainer to="/cart" id="cartContainerBadge">
-                  <Nav.Link className="fa-solid fa-cart-shopping" id="cart">
+                <Nav.Link href="/cart" id="cartContainerBadg">
+                  {/* <Nav.Link className="fa-solid fa-cart-shopping" id="cart">
                     Cart
                     <Badge id="badge" bg="secondary">
                       {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                     </Badge>
-                  </Nav.Link>
-                </LinkContainer>
+                  </Nav.Link> */}
+                  cart
+                  <Badge id="badge" bg="secondary">
+                      {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                    </Badge>
+                </Nav.Link>
               )}
               {userInfo ? (
                 <NavDropdown title={userInfo.name.split(" ")[0]} id="username">
@@ -58,11 +57,12 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <LinkContainer to="/login" id="login">
-                  <Nav.Link href="/login" className="fa fa-user">
+                <Nav.Link href="/login" id="login">
+                  {/* <Nav.Link href="/login" className="fa fa-user">
                     Sign In
-                  </Nav.Link>
-                </LinkContainer>
+                  </Nav.Link> */}
+                  Sign In
+                </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

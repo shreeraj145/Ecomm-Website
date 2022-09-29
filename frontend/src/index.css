@@ -39,36 +39,18 @@ h2 {
   padding: 0.5rem 0;
 }
 
-#cartContainer {
-  position: relative;
-  margin-top: 0.35rem;
-}
-
 #cartContainerBadge {
-  position: relative;
   margin-top: auto;
 }
 
-#cart {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 #badge {
-  max-height: 1.3rem;
-  border-radius: 50%;
-  top: auto;
+  max-height: 1.5rem;
+  border-radius: 28%;
+  padding-left: 0.4rem;
 }
 
 .badge {
   padding-left: 0.54rem;
-}
-#username {
-  font-weight: 1.5rem;
-  font-size: medium;
 }
 
 #GoBackBtn {

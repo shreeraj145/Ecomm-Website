@@ -19,8 +19,8 @@ const Profile = () => {
   const { userInfo } = userLogin;
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  const { success, updateError, updatedUserInfo } = userUpdateProfile;
-  console.log(updatedUserInfo);
+  const { success, updateError } = userUpdateProfile;
+
 
   useEffect(() => {
     if (!userInfo) {
@@ -28,17 +28,12 @@ const Profile = () => {
     } else {
       if (!user.name) {
         dispatch(getUserDetails("profile"));
-      } else if (updatedUserInfo) {
-        setName(updatedUserInfo.name);
-        setEmail(updatedUserInfo.email);
       } else {
         setName(user.name);
         setEmail(user.email);
       }
     }
   }, [dispatch, navigate, userInfo, user]);
-
-  console.log(name);
   return (
     <Row>
       <Col md={5}>
