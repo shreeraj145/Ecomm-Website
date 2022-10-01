@@ -27,7 +27,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {cartItems.length === 0 ? (
-                <Nav.Link to="/cart" id="cartContainer">
+                <Nav.Link href="/cart" id="cartContainer">
                   {/* <Nav.Link className="fa-solid fa-cart-shopping d-flex align-self-baseline">
                     Cart
                   </Nav.Link> */}
@@ -43,8 +43,8 @@ const Header = () => {
                   </Nav.Link> */}
                   cart
                   <Badge id="badge" bg="secondary">
-                      {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                    </Badge>
+                    {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                  </Badge>
                 </Nav.Link>
               )}
               {userInfo ? (

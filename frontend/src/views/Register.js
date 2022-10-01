@@ -13,6 +13,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
 
+
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,6 +32,8 @@ const Register = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+   
 
     if (password !== confirmPassword) {
       setMessage("Password fo not match");
@@ -45,7 +48,7 @@ const Register = () => {
       {message && <Alert variant="danger">{message}</Alert>}
       {error && <Alert variant="danger">{error}</Alert>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <Form  onSubmit={submitHandler}>
         <Form.Group controlId="name" className="my-2">
           <Form.Label>Name</Form.Label>
           <Form.Control

@@ -8,8 +8,10 @@ import Product from "./views/Product.js";
 import Cart from "./views/Cart.js";
 import Login from "./views/Login.js";
 import Register from "./views/Register.js";
-import Profile from "./views/Profile";
-import UpdateProfile from "./views/UpdateProfile";
+import Profile from "./views/Profile.js";
+import UpdateProfile from "./views/UpdateProfile.js";
+import Shipping from "./views/Shipping.js";
+import PaymentMethod from "./views/PaymentMethod.js";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route path="/payment" element={<PaymentMethod />} />
+            <Route path="/shipping" element={<Shipping />} />
             <Route path="/" element={<Home />} exact />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/login" element={<Login />} />
