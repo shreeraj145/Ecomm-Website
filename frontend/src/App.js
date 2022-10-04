@@ -12,6 +12,8 @@ import Profile from "./views/Profile.js";
 import UpdateProfile from "./views/UpdateProfile.js";
 import Shipping from "./views/Shipping.js";
 import PaymentMethod from "./views/PaymentMethod.js";
+import PlaceOrder from "./views/PlaceOrder.js";
+import Order from "./views/Order.js";
 
 const App = () => {
   return (
@@ -20,7 +22,9 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route path="order/:id" element={<Order />} />
             <Route path="/payment" element={<PaymentMethod />} />
+            <Route path="/placeorder" element={<PlaceOrder />} />
             <Route path="/shipping" element={<Shipping />} />
             <Route path="/" element={<Home />} exact />
             <Route path="/product/:id" element={<Product />} />

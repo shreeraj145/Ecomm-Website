@@ -22,16 +22,17 @@ const Product = () => {
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(listProductsDetails(id));
   }, [dispatch]);
 
   const addToCartHandler = async () => {
-    await history(`/cart/${id}?qty=${qty}`);
-    history(`/product/${id}`);
+    await navigate(`/cart/${id}?qty=${qty}`);
+    navigate(`/product/${id}`);
   };
+
   return (
     <>
       <Link className="btn btn-light my-3" to="/">

@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
+  const userDetails = useSelector((state) => state.userDetails);
   const { userInfo } = userLogin;
+  const { user } = userDetails;
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -28,23 +30,16 @@ const Header = () => {
             <Nav className="ms-auto">
               {cartItems.length === 0 ? (
                 <Nav.Link href="/cart" id="cartContainer">
-                  {/* <Nav.Link className="fa-solid fa-cart-shopping d-flex align-self-baseline">
-                    Cart
-                  </Nav.Link> */}
+                  <i className="fa-solid fa-cart-shopping"></i>
                   Cart
                 </Nav.Link>
               ) : (
                 <Nav.Link href="/cart" id="cartContainerBadg">
-                  {/* <Nav.Link className="fa-solid fa-cart-shopping" id="cart">
-                    Cart
-                    <Badge id="badge" bg="secondary">
-                      {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                    </Badge>
-                  </Nav.Link> */}
+                  <i className="fa-solid fa-cart-shopping"></i>
                   cart
-                  <Badge id="badge" bg="secondary">
+                  <span className="badge badge-warning" id="lblCartCount">
                     {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                  </Badge>
+                  </span>
                 </Nav.Link>
               )}
               {userInfo ? (
@@ -58,9 +53,7 @@ const Header = () => {
                 </NavDropdown>
               ) : (
                 <Nav.Link href="/login" id="login">
-                  {/* <Nav.Link href="/login" className="fa fa-user">
-                    Sign In
-                  </Nav.Link> */}
+                  <i className="fa fa-user"></i>
                   Sign In
                 </Nav.Link>
               )}

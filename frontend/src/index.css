@@ -60,3 +60,19 @@ h2 {
 #place-order {
   margin: auto;
 }
+
+#lblCartCount {
+  font-size: 11px;
+  background: #ffffff;
+  color: rgb(3, 0, 0);
+  padding: 0 5px;
+  vertical-align: top;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
